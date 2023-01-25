@@ -1,23 +1,7 @@
 {
   "dependencies": {
-    "discord.js": "^14.7.1"
-  },
-  "name": "steak_bot",
-  "version": "1.0.0",
-  "description": "AI bot",
-  "main": "index.js",
-  "devDependencies": {},
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/Gregnald/Steak_bot.git"
-  },
-  "author": "Gregnald",
-  "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/Gregnald/Steak_bot/issues"
-  },
-  "homepage": "https://github.com/Gregnald/Steak_bot#readme"
+    "discord.js": "^14.7.1",
+    "dotenv": "^16.0.3",
+    "openai": "^3.1.0"
+  }
 }
