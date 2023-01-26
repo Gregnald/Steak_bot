@@ -20,21 +20,6 @@ const client = new Client({
 client.login(process.env.D_API);
 console.log(process.env.D_API);
 
-/*client.on('message', async message => {
-  if (message.author.bot) return; // ignore messages from other bots
-
-  // use openai to generate a response to the message
-  const response = await openai.Completion.create({
-    prompt: message.content,
-    model: 'text-davinci-003',
-    temperature: 0.7,
-  });
-
-  // send the response back to the channel
-  message.channel.send(response.choices[0].text);
-});
-*/
-
 client.on('messageCreate', async function(message){
     try {
         if (message.author.bot) return; // ignore messages from other bots
