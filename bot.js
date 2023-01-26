@@ -1,13 +1,11 @@
+require('dotenv').config();
 const Discord = require('discord.js');
 const { Configuration, OpenAIApi }= require('openai');
 const configuration = new Configuration( {
-    organization: "org-2O3sEvnP6YoHlOz5g1ptlAx7",
-    apiKey: "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",
+    organization: process.env.ORG_API,
+    apiKey: process.env.OPENAI_API,
 });
 const openai = new OpenAIApi (configuration);
-
-// set up openai API key
-openai.apiKey = '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';
 
 const { Client, GatewayIntentBits } = require('discord.js');
 const client = new Client({
@@ -19,7 +17,8 @@ const client = new Client({
     GatewayIntentBits.DirectMessages
   ]
 });
-client.login('ODU5NzczOTkzOTYyNDM4NjY2.GDaAOc.tN2k-hjTEyAybcJFOd7H4d3Q65WbvY8ZUxjS3s');
+client.login(process.env.D_API);
+console.log(process.env.D_API);
 
 /*client.on('message', async message => {
   if (message.author.bot) return; // ignore messages from other bots
