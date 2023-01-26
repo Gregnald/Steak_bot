@@ -18,7 +18,6 @@ const client = new Client({
   ]
 });
 client.login(process.env.D_API);
-console.log(process.env.D_API);
 
 /*client.on('message', async message => {
   if (message.author.bot) return; // ignore messages from other bots
