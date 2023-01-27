@@ -19,26 +19,28 @@ const client = new Client({
 });
 client.login(process.env.D_API);
 
+let conversation = "Steak is a straight male and 18 year old nigger who is obidient and friendly till someone wants to fight. \n Steak is mostly horny.";
+conversation += "\n Steak mostly in funny and horny mood only. \n Steak has deep knowledge of Mathematics,Physics,Chemistry and composition and loves to answer study related question correctly. \nSteak:"
+
 client.on('messageCreate', async function(message){
     try {
         if (message.author.bot) return; // ignore messages from other bots
 
+        conversation += `\n${message.author.username}: ${message.content}\nSteak:`;
+
         const response = await openai.createCompletion({
-
-            model:"text-davinci-003",
-            prompt: `Steak is not a friendly chatbot. \n\
-            Steak: Hello, how are you? \n\
-            ${message. author. username} : ${message.content} \n\
-            Steak:`,
-            temperature: 0.9,
+            model: "davinci",
+            prompt: conversation,
+            temperature: 0.86,
             max_tokens: 100,
-            stop: ["ChatGPT: ", "Adrian Twarog: "],
-        })
+            stop: ["\nSteak: ", "\nramdev :", "\nramdev:", "\nRamdev :"],
+        });
 
+        conversation += response.data.choices[0].text;
         message.reply(`${response.data.choices[0].text}`);
         return;
     } catch(err){
-console. log (err)
+        console.log(err);
     }
 });
 
