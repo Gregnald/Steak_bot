@@ -1,8 +1,82 @@
+<!DOCTYPE html>
 <html>
   <head>
-    <title>My Discord Bot</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Steak - The Discord Bot</title>
+
+    <!-- CSS Style for dark theme -->
+    <style>
+      body {
+        background-color: #333;
+        color: #fff;
+        font-family: Arial, sans-serif;
+      }
+
+      .container {
+        max-width: 800px;
+        margin: 0 auto;
+        padding: 20px;
+      }
+
+      h1 {
+        font-size: 36px;
+        text-align: center;
+        margin-bottom: 20px;
+      }
+
+      a {
+        color: #fff;
+      }
+
+      .footer {
+        position: fixed;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        background-color: #222;
+        padding: 10px;
+        text-align: center;
+      }
+
+      .footer p {
+        overflow: hidden;
+        width: 400px;
+        margin: 0 auto;
+        white-space: nowrap;
+        animation: typing 5s steps(40, end),
+          erase 5s steps(40, end);
+        animation-iteration-count: infinite;
+      }
+
+      @keyframes typing {
+        from {
+          width: 0;
+        }
+        to {
+          width: 400px;
+        }
+      }
+
+      @keyframes erase {
+        from {
+          width: 400px;
+        }
+        to {
+          width: 0;
+        }
+      }
+    </style>
   </head>
   <body>
-    <h1>Steak!!</h1>
+    <div class="container">
+      <h1>Welcome to Steak - The Discord Bot</h1>
+
+      <!-- Add other content for the pages here -->
+
+    </div>
+    <div class="footer">
+      <p>Written and Developed by Aviral Srivastava</p>
+    </div>
   </body>
 </html>
