@@ -42,20 +42,5 @@ client.on('ready', () => {
   console.log('bot is ready'); 
 });
 
-process.on('unhandledRejection', error => {
-  console.error(`Unhandled Rejection: ${error.message}`);
-});
-
-process.on('SIGINT', () => {
-  console.log('SIGINT: Closing the bot process.');
-  process.exit();
-});
-
-process.on('SIGTERM', () => {
-  console.log('SIGTERM: Closing the bot process.');
-  process.exit();
-});
-
-
 console.log ("Steak is Online on Discord")
 app.listen(5000, () => console.log('AI server started on http://localhost:5000'))

@@ -11,7 +11,7 @@ async function api_resp(client, message, openai, trait, conversation) {
             model: "davinci",
             prompt: conversationTrim,
             temperature: 0.9,
-            max_tokens: 1100,
+            max_tokens: 100,
             stop: ["\nSteak:", `\n${message.author.username}:`, "\nAryashi:", "\n\n" ]
         });
         conversation += response.data.choices[0].text;
