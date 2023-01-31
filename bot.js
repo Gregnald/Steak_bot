@@ -1,6 +1,6 @@
 require('dotenv').config();
-import express from 'express'
-import cors from 'cors'
+const express = require('express');
+const cors = require('cors');
 const api = require('./api');
 const { Configuration, OpenAIApi }= require('openai');
 const configuration = new Configuration( {
