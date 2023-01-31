@@ -40,23 +40,14 @@
       }
 
       .footer p {
-        font-family: 'Courier New', Courier, monospace;
-        font-size: 18px;
         overflow: hidden;
-        width: 90%;
+        width: 200px;
         margin: 0 auto;
         white-space: nowrap;
-        animation: typing 5s steps(40, end), erase 5s steps(40, end);
+        animation: typing 5s steps(40, end),
+          erase 5s steps(40, end);
         animation-iteration-count: infinite;
-      }
-
-      .footer span {
-        background: linear-gradient(to right, rgba(255,255,255,0), rgba(255,255,255,1), rgba(255,255,255,0)); 
-        width: 1px; 
-        height: 22px; 
-        animation: typing 1s linear infinite;
-        display: inline-block;
-        margin-right: 10px;
+        font-family: Arial, sans-serif;
       }
 
       @keyframes typing {
@@ -64,13 +55,13 @@
           width: 0;
         }
         to {
-          width: 400px;
+          width: 200px;
         }
       }
 
       @keyframes erase {
         from {
-          width: 400px;
+          width: 200px;
         }
         to {
           width: 0;
@@ -86,10 +77,7 @@
 
     </div>
     <div class="footer">
-      <p>
-        <span style=""></span>
-        ChatGPT: Hello! I'm typing and deleting this message. How can I help you?
-      </p>
+      <p>Written and Developed by Aviral Srivastava</p>
     </div>
   </body>
 </html>
