@@ -1,6 +1,4 @@
 require('dotenv').config();
-import express from 'express'
-const app = express()
 const api = require('./api');
 const { Configuration, OpenAIApi }= require('openai');
 const configuration = new Configuration( {
@@ -20,10 +18,6 @@ const client = new Client({
   ]
 });
 client.login(process.env.D_API);
-
-setInterval(() => {
-  console.log("Keep-alive message");
-}, 30 * 1000);
 
 app.listen(5000, () => console.log('Steak is on!!'))
 
