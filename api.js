@@ -10,9 +10,9 @@ async function api_resp(client, message, openai, trait, conversation) {
         const response = await openai.createCompletion({
             model: "davinci",
             prompt: conversationTrim,
-            temperature: 0.9,
+            temperature: 0.5,
             max_tokens: 100,
-            stop: ["\nSteak:", `\n${message.author.username}:`, "\nAryashi:", "\n\n" ]
+            stop: ["\nSteak:", `\n${message.author.username}:`, "\n\n" ]
         });
         conversation += response.data.choices[0].text;
         let resp=response.data.choices[0].text;

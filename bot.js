@@ -2,6 +2,8 @@ require('dotenv').config();
 const express = require('express');
 const cors = require('cors');
 const api = require('./api');
+const mongoose = require('mongoose')
+const MTOKEN = process.env.MTOKEN;
 const { Configuration, OpenAIApi }= require('openai');
 const configuration = new Configuration( {
     organization: process.env.ORG_API,
