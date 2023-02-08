@@ -8,7 +8,7 @@ async function api_resp(client, message, openai, trait, conversation) {
         console.log(conversation);
         const response = await openai.createCompletion({
             model: "davinci",
-            prompt: conversationTrim,
+            prompt: conversation,
             temperature: 0.6,
             max_tokens: 100,
             stop: ["\nSteak:", `\n${message.author.username}:`, "\n\n" ]
