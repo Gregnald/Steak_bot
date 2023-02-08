@@ -1,5 +1,5 @@
 // db.js
-const mongoose = require('mongoose');
+/*const mongoose = require('mongoose');
 
 const MONGODB_URI = process.env.MTOKEN;
 
@@ -19,3 +19,4 @@ db.once('open', function() {
 });
 
 module.exports = mongoose;
+*/

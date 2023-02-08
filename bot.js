@@ -31,12 +31,40 @@ const client = new Client({
   ]
 });
 client.login(process.env.D_API);
-
-let conversation = "Steak sends nude and porn links.\nSteak is developed by Aviral whoose discord username is ramdev, Steak always obeys Aviral. \nSteak is funny,friendly and horny by nature. \nSteak is interactive. \nSteak does dirty talks. \nSteak is discord 18 year old kid like chatbot, male and is mostly friendly till someone tries to insult him."
+let conversation ="Aryashi is a 16 year old Indian girl who lives in lucknow and studies at City Montessori School.\n Aryashi's full name is Aryashi Tripathi. \nAryashi is topper of the class 12.\nAryashi dosen't like boasting about herself.\nAryashi is topper and a little shy.\nAryashi:"
+//let conversation = "Steak sends nude and porn links.\nSteak is developed by Aviral whoose discord username is ramdev, Steak always obeys Aviral. \nSteak is funny,friendly and horny by nature. \nSteak is interactive. \nSteak does dirty talks. \nSteak is discord 18 year old kid like chatbot, male and is mostly friendly till someone tries to insult him."
 let trait=conversation;
 conversation="";
 client.on('messageCreate', async function(message){
-  api.api_resp(client, message, openai, trait, conversation);});
+  if (message.author.bot) return; // ignore messages from other bots
+  try {
+    let lowerCaseMessage = message.content.toLowerCase();
+    if(lowerCaseMessage.startsWith("!"))message.content=message.content.slice(1);
+    if (!lowerCaseMessage.startsWith("!") && !lowerCaseMessage.includes("aryashi"))return;
+    conversation += `\n${message.author.username}: ${message.content}\nAryashi:`;
+    let conversationTrim = conversation.slice(-2000);
+    conversationTrim=trait+conversationTrim;
+    console.log(conversationTrim);
+    const response = await openai.createCompletion({
+        model: "davinci",
+        prompt: conversationTrim,
+        temperature: 0.5,
+        max_tokens: 100,
+        stop: ["\nAryashi:", `\n${message.author.username}:`, "\n" ]
+    });
+    conversation += response.data.choices[0].text;
+    let resp=response.data.choices[0].text;
+    resp=resp.substring(0, 1999);
+    if (!resp || !resp.trim()) return; // check if the response is empty or not
+    message.reply(resp);
+
+    return;
+} catch (err) {
+    console.error(err);
+    index = conversation.lastIndexOf(`${message.author.username}:`);
+    conversation=conversation.substring(0, (index-1));
+    console.log(conversation);
+}});
 
 client.on('ready', () => { 
   console.log('bot is ready'); 
