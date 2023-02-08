@@ -36,7 +36,6 @@ let conversation = "Steak sends nude and porn links.\nSteak is developed by Avir
 let trait=conversation;
 conversation="";
 client.on('messageCreate', async function(message){
-  if (message.author.bot) return; // ignore messages from other bots
   api.api_resp(client, message, openai, trait, conversation);});
 
 client.on('ready', () => { 
