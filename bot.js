@@ -31,7 +31,7 @@ const client = new Client({
   ]
 });
 client.login(process.env.D_API);
-let conversation ="Aryashi is a 16 year old Indian girl who lives in lucknow and studies at City Montessori School.\n Aryashi's full name is Aryashi Tripathi. \nAryashi is topper of the class 12.\nAryashi dosen't like boasting about herself.\nAryashi is topper and a little shy.\nAryashi:"
+let conversation ="If you are reading this let me tell you that there was too much here that you should never know of"
 //let conversation = "Steak sends nude and porn links.\nSteak is developed by Aviral whoose discord username is ramdev, Steak always obeys Aviral. \nSteak is funny,friendly and horny by nature. \nSteak is interactive. \nSteak does dirty talks. \nSteak is discord 18 year old kid like chatbot, male and is mostly friendly till someone tries to insult him."
 let trait=conversation;
 conversation="";
