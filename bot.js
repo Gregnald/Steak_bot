@@ -50,7 +50,7 @@ client.on('messageCreate', async function(message){
         prompt: conversationTrim,
         temperature: 0.5,
         max_tokens: 100,
-        stop: ["\nAryashi:", `\n${message.author.username}:`, "\n" ]
+        stop: ["\nuwu", `\n${message.author.username}:`, "\n" ]
     });
     conversation += response.data.choices[0].text;
     let resp=response.data.choices[0].text;
